@@ -29,8 +29,8 @@
 .TextInput {
 	background-color: transparent;
 	border-radius: var(--borderRadius);
-	border: 1px solid var(--white);
-	color: var(--white);
+	border: 1px solid var(--whiteBlue);
+	color: var(--almostBlack);
 	line-height: 38px;
 	padding: 0 10px;
 	transition: border-color .2s linear;
@@ -54,7 +54,7 @@
 
 .TextInput::-webkit-input-placeholder {
 	font-size: 14px;
-	color: var(--white);
+	color: var(--grey3);
 	opacity: .75;
 }
 

@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Button from '../../atoms/Button';
 // import InputError from '../InputError';
-// import { EyeIcon, EyeFillIcon } from '../../../icons';
 import './styles.css';
 
 const EMAIL_PATTERN = '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$';
@@ -97,14 +96,6 @@ export default class TextInput extends Component {
 			({ isShowingPassword: !isShowingPassword }));
 	}
 
-	passwordIcon = () => {
-		const { isShowingPassword } = this.state;
-
-		// return isShowingPassword
-		// 	? <EyeFillIcon />
-		// 	: <EyeIcon />;
-	}
-
 	showError (showError = true) {
 		this.setState((state) => {
 			if (state.showError === showError) return null;
@@ -142,13 +133,6 @@ export default class TextInput extends Component {
 		return (
 
 			<div className={`TextInput-wrapper ${className}`}>
-				{
-					type === 'password' &&
-					<Button className='TextInput-toggleBtn' onClick={this.handlePasswordMaskToggle} >
-						{/* {this.passwordIcon()} */}
-					</Button>
-				}
-
 				<input
 					autoComplete={autocomplete}
 					aria-label={ariaLabel}

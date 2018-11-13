@@ -13,7 +13,7 @@
 .ErrorDialog-icon {
 	width: 60px;
 	height: 60px;
-	color: var(--tomatoRed);
+	color: var(--midBlue);
 }
 
 .ErrorDialog-icon svg {
