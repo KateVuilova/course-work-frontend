@@ -23,7 +23,7 @@
 }
 
 .Tabs-button-active {
-	color: var(--tomatoRed);
+	color: var(--midBlue);
 }
 
 .Tabs-activeBarWrapper {
@@ -43,7 +43,7 @@
 }
 
 .Tabs-activeBarInner {
-	background-color: var(--tomatoRed);
+	background-color: var(--midBlue);
 	height: 100%;
 }
 

@@ -3,11 +3,11 @@
 }
 
 .Button {
-	background-color: var(--tomatoRed);
+	background-color: var(--midBlue);
 	border-radius: var(--borderRadius);
 	border-width: 1px;
 	border-style: solid;
-	border-color: var(--tomatoRed);
+	border-color: var(--midBlue);
 	color: var(--white);
 	cursor: pointer;
 	font-size: 14px;
@@ -38,7 +38,7 @@
 
 .Button-grey,
 .Button-white {
-	color: var(--tomatoRed);
+	color: var(--midBlue);
 }
 
 .Button-grey {
@@ -48,13 +48,13 @@
 
 .Button-grey:hover {
 	background-color: var(--white);
-	border-color: var(--tomatoRed);
-	color: var(--tomatoRed);
+	border-color: var(--midBlue);
+	color: var(--midBlue);
 }
 
 .Button-white,
 .Button-white:hover {
 	background-color: var(--white);
 	border-color: var(--white);
-	color: var(--tomatoRed);
+	color: var(--midBlue);
 }
