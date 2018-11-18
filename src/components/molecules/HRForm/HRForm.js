@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import WorkerForm from '../WorkerForm';
 import TextInput from '../TextInput';
-import Form from '../Form';
 
-export default class ObjectForm extends Component {
+export default class HRForm extends Component {
   render() {
     return (
-      <Form>
+      <WorkerForm>
         <TextInput
           errorText='Error'
-          placeholder='Name'
+          placeholder='Department'
           type='text'
-          name='Name'
+          name='Department'
         />
         {this.props.children}
-      </Form>
+      </WorkerForm>
     );
   }
 }

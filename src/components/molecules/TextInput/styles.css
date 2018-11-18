@@ -6,6 +6,7 @@
 	position: relative;
 	align-items: center;
 	width: 100%;
+	margin-bottom: 16px;
 }
 
 .TextInput-wrapper .TextInput-toggleBtn {

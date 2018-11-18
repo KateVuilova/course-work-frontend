@@ -1,0 +1,16 @@
+.ItemList > li {
+	height: 40px;
+	list-style: none;
+	padding-left: 15px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.ItemList > li:nth-child(odd) {
+	background: var(--blueListColor);
+}
+
+.ItemList > li:hover {
+	background: var(--grey2);
+}

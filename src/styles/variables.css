@@ -17,6 +17,7 @@
 	--lightBlue: rgb(77, 166, 255);
 	--midBlue: rgb(51, 153, 255);
 	--white: rgb(255, 255, 255);
+	--blueListColor: rgb(246, 250, 255);
 
 	/* Gradients */
 	--redGradient: linear-gradient(320deg, var(--purpleBlue), var(--lightBlue));

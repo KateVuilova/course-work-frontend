@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-
-// import { CloseIcon } from '../../../icons';
+import { CloseIcon } from '../../../icons';
 
 import './styles.css';
 
@@ -54,7 +53,7 @@ export class Dialog extends Component {
 						className='Dialog-close-button'
 						onClick={this.handleClick}
 					>
-						{/* <CloseIcon /> */}
+						<CloseIcon />
 					</button>}
 				{children}
 			</dialog>

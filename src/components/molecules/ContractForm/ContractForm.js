@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import ClientDocumentationForm from '../ClientDocumentationForm';
 import TextInput from '../TextInput';
-import Form from '../Form';
 
-export default class ObjectForm extends Component {
+export default class ContractForm extends Component {
   render() {
     return (
-      <Form>
+      <ClientDocumentationForm>
         <TextInput
           errorText='Error'
-          placeholder='Name'
+          placeholder='Signing date'
           type='text'
-          name='Name'
+          name='Signing date'
         />
         {this.props.children}
-      </Form>
+      </ClientDocumentationForm>
     );
   }
 }

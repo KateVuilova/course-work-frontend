@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import MaterialForm from '../MaterialForm';
 import TextInput from '../TextInput';
-import Form from '../Form';
 
-export default class ObjectForm extends Component {
+export default class RepairStationForm extends Component {
   render() {
     return (
-      <Form>
+      <MaterialForm>
         <TextInput
           errorText='Error'
-          placeholder='Name'
+          placeholder='Free places'
           type='text'
-          name='Name'
+          name='Free places'
         />
         {this.props.children}
-      </Form>
+      </MaterialForm>
     );
   }
 }

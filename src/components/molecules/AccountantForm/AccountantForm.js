@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import WorkerForm from '../WorkerForm';
 import TextInput from '../TextInput';
-import Form from '../Form';
 
-export default class ObjectForm extends Component {
+export default class AccountantForm extends Component {
   render() {
     return (
-      <Form>
+      <WorkerForm>
         <TextInput
           errorText='Error'
-          placeholder='Name'
+          placeholder='Field'
           type='text'
-          name='Name'
+          name='Field'
         />
         {this.props.children}
-      </Form>
+      </WorkerForm>
     );
   }
 }

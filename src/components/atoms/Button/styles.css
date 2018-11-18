@@ -30,8 +30,8 @@
 }
 
 .Button:hover {
-	background-color: var(--darkRed);
-	border-color: var(--darkRed);
+	background-color: var(--darkBlue);
+	border-color: var(--darkBlue);
 	color: var(--white);
 	text-decoration: none;
 }
