@@ -11229,6 +11229,14 @@ react-color@^2.14.0:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
+react-contexify@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-contexify/-/react-contexify-4.0.0.tgz#d9325c18cf431d9d5fae35dbf7c24af59d79e65b"
+  integrity sha512-y2+tTsfjFWeEwmhTxE2qlthquxhPg454kuGA3HIx2vbQFio/jB9Rq39u8PV9KZjFYmH65A2UNySBUFL6fAvi9A==
+  dependencies:
+    classnames "^2.2.6"
+    prop-types "^15.6.2"
+
 react-datetime@^2.14.0:
   version "2.16.2"
   resolved "https://registry.yarnpkg.com/react-datetime/-/react-datetime-2.16.2.tgz#d5d41fe3f6f3fa8fa1b068f2fae75cec25e1bb39"

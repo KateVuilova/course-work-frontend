@@ -1,6 +1,6 @@
 .ItemList > li {
 	height: 40px;
-	list-style: none;
+	/* list-style: none; */
 	padding-left: 15px;
 	display: flex;
 	align-items: center;
@@ -13,4 +13,19 @@
 
 .ItemList > li:hover {
 	background: var(--grey2);
+}
+
+.ItemList-inner {
+	margin-bottom: 0;
+	padding: 0;
+	padding-left: 30px;
+}
+
+.ItemList-inner > li {
+	height: 40px;
+	padding-left: 15px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	background: white;
 }
