@@ -1,3 +1,7 @@
+.ItemList {
+	margin: 20px;
+}
+
 .ItemList > li {
 	height: 40px;
 	/* list-style: none; */
@@ -28,4 +32,9 @@
 	align-items: center;
 	cursor: pointer;
 	background: white;
+	cursor: pointer;
+}
+
+.ItemList-inner > li:hover {
+	color: var(--purpleBlue);
 }
