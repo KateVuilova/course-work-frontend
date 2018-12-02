@@ -1,0 +1,12 @@
+.BoxShadow {
+  --BoxShadow-shadow: 0 2px 4px 0 rgba(136, 158, 176, .4);
+
+  box-shadow: var(--BoxShadow-shadow);
+  background-color: white;
+  border-radius: var(--runic-border-radius);
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}

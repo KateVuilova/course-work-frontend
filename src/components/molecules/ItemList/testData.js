@@ -5,45 +5,45 @@ export const list = [
 	  children: [
 		{
 		  id: '2',
-		  name: 'Child 1',
+		  name: 'Ian Rudy',
 		  children: [
 			  {
 				id: '4',
-				name: 'Child 1',
+				name: 'Mathew Livik',
 			  },
 			  {
 				id: '5',
-				name: 'Child 2',
+				name: 'Ruth Baltimore',
 			  },
 			],
 		},
 		{
 		  id: '3',
-		  name: 'Child 2',
+		  name: 'Jared Smith',
 		},
 	  ],
 	},
 	{
 	  id: '6',
-	  name: 'Panda Coconut',
+	  name: 'Michel Fild',
 	  children: [
 		{
 		  id: '7',
-		  name: 'Child 1',
+		  name: 'Olivia Demphy',
 		  children: [
 			  {
 				id: '9',
-				name: 'Child 1',
+				name: 'Rachel Adams',
 			  },
 			  {
 				id: '10',
-				name: 'Child 2',
+				name: 'Poppy Vitton',
 			  },
 			],
 		},
 		{
 		  id: '8',
-		  name: 'Child 2',
+		  name: 'Rene Dupont',
 		},
 	  ],
 	},

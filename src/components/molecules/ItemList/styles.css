@@ -38,3 +38,13 @@
 .ItemList-inner > li:hover {
 	color: var(--purpleBlue);
 }
+
+.ItemList-dialog {
+	width: 500px;
+	height: 600px;
+	text-align: center;
+}
+
+.ItemList-dialog span {
+	font-size: 24px;
+}
