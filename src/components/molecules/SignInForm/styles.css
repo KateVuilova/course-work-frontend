@@ -1,0 +1,11 @@
+.SignInForm {
+	width: 700px;
+}
+
+.SignInForm-formErrorBox {
+	text-align: left;
+}
+
+.SignInForm-button {
+	color: white;
+}

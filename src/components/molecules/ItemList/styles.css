@@ -1,6 +1,10 @@
+.ItemList {
+	margin: 20px;
+}
+
 .ItemList > li {
 	height: 40px;
-	list-style: none;
+	/* list-style: none; */
 	padding-left: 15px;
 	display: flex;
 	align-items: center;
@@ -13,4 +17,34 @@
 
 .ItemList > li:hover {
 	background: var(--grey2);
+}
+
+.ItemList-inner {
+	margin-bottom: 0;
+	padding: 0;
+	padding-left: 30px;
+}
+
+.ItemList-inner > li {
+	height: 40px;
+	padding-left: 15px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	background: white;
+	cursor: pointer;
+}
+
+.ItemList-inner > li:hover {
+	color: var(--purpleBlue);
+}
+
+.ItemList-dialog {
+	width: 500px;
+	height: 600px;
+	text-align: center;
+}
+
+.ItemList-dialog span {
+	font-size: 24px;
 }
