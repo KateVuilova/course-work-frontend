@@ -18,6 +18,12 @@ const getListFetch = (Authorization) => {
 	return httpApi.get(`${api}/abstractObject/get_all`, { Authorization });
 };
 
+const createClienFetch = (Authorization, body) => httpApi.post(`${api}/client`, body);
+
+const getClientFetch = (Authorization, id) => httpApi.get(`${api}/client/${id}`, { Authorization });
+
+const deleteClientFetch = (Authorization, id) => httpApi.delete(`${api}/client/${id}`, { Authorization });
+
 const getAccessTokenFromStore = (store) => {
 	const state = store.value;
 	return state.userInfo && state.userInfo.accessToken;
@@ -78,6 +84,56 @@ export const getListEpic = (action$, store) => {
 				return of(userInfo.getListError());
 			}
 			return of(userInfo.getListSuccess(res));
+		}),
+
+	);
+};
+
+export const createClientEpic = (action$, store) => {
+	return action$.ofType(ACTIONS.CREATE_CLIENT_REQUEST).pipe(
+		switchMap(({ payload }) => {
+			const body = { ...payload, type: 'Client' }
+			const accessToken = getAccessTokenFromStore(store);
+			return createClienFetch(accessToken, body);
+		}),
+		switchMap((res) => {
+			if (res.error) return of(userInfo.createClientError());
+			return of(userInfo.createClientSuccess(res));
+		})
+	);
+};
+
+export const getClientEpic = (action$, store) => {
+	return action$.ofType(ACTIONS.GET_CLIENT_REQUEST).pipe(
+		switchMap(({ payload }) => {
+			const accessToken = getAccessTokenFromStore(store);
+			if (!accessToken) return empty();
+			return getClientFetch(accessToken, payload);
+		}),
+		switchMap((res) => fromPromise(res.json())),
+		switchMap((res) => {
+			if (res.error) {
+				return of(userInfo.getClientError());
+			}
+			return of(userInfo.getClientSuccess(res));
+		}),
+
+	);
+};
+
+export const deleteClientEpic = (action$, store) => {
+	return action$.ofType(ACTIONS.DELETE_CLIENT_REQUEST).pipe(
+		switchMap(({ payload }) => {
+			const accessToken = getAccessTokenFromStore(store);
+			if (!accessToken) return empty();
+			return deleteClientFetch(accessToken, payload);
+		}),
+		// switchMap((res) => fromPromise(res.json())),
+		switchMap((res) => {
+			if (res.error) {
+				return of(userInfo.deleteClientError());
+			}
+			return of(userInfo.deleteClientSuccess(res));
 		}),
 
 	);

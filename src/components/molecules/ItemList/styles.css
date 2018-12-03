@@ -19,6 +19,10 @@
 	background: var(--grey2);
 }
 
+.ItemList > li span {
+	color: grey;
+}
+
 .ItemList-inner {
 	margin-bottom: 0;
 	padding: 0;

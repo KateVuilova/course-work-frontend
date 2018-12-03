@@ -1,0 +1,8 @@
+.CreateView {
+	padding: 20px 40px;
+}
+
+.CreateView select {
+	width: 300px;
+	height: 40px;
+}

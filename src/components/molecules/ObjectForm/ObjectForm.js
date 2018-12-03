@@ -7,14 +7,18 @@ import Form from '../Form';
 export default class ObjectForm extends Component {
   render() {
     return (
-      <Form>
-        <TextInput
+      <Form onSubmit={this.props.onSubmit}>
+        <Form.TextInput
           errorText='Error'
           placeholder='Name'
           type='text'
-          name='Name'
+          name='name'
+          value={this.props.mode === 'edit' && this.props.item ? this.props.item.name : undefined}
         />
         {this.props.children}
+        <div>
+						<Form.Button disabled={this.props.submitting} className=''>Save</Form.Button>
+				</div>
       </Form>
     );
   }

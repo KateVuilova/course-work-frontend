@@ -34,6 +34,15 @@ const userInfo = (state = {}, {
 				...state,
 				list: payload,
 			}
+		case ACTIONS.GET_CLIENT_REQUEST_SUCCESS:
+			return {
+				...state,
+				currentItem: payload,
+			}
+		case ACTIONS.DELETE_CLIENT_REQUEST_SUCCESS:
+		return {
+			...state,
+		}
 		case ACTIONS.GET_LIST__REQUEST:
 		default:
 			return state;
@@ -69,6 +78,48 @@ userInfo.getListSuccess = (payload) => ({
 
 userInfo.getListError = () => ({
 	type: ACTIONS.GET_LIST__REQUEST_ERROR,
+});
+
+userInfo.createClient = (payload) => ({
+	type: ACTIONS.CREATE_CLIENT_REQUEST,
+	payload,
+});
+
+userInfo.createClientSuccess = (payload) => ({
+	type: ACTIONS.CREATE_CLIENT_REQUEST_SUCCESS,
+	payload,
+});
+
+userInfo.createClientError = () => ({
+	type: ACTIONS.CREATE_CLIENT_REQUEST_ERROR,
+});
+
+userInfo.getClient = (payload) => ({
+	type: ACTIONS.GET_CLIENT_REQUEST,
+	payload,
+});
+
+userInfo.getClientSuccess = (payload) => ({
+	type: ACTIONS.GET_CLIENT_REQUEST_SUCCESS,
+	payload,
+});
+
+userInfo.getClientError = () => ({
+	type: ACTIONS.GET_CLIENT_REQUEST_ERROR,
+});
+
+userInfo.deleteClient = (payload) => ({
+	type: ACTIONS.DELETE_CLIENT_REQUEST,
+	payload,
+});
+
+userInfo.deleteClientSuccess = (payload) => ({
+	type: ACTIONS.DELETE_CLIENT_REQUEST_SUCCESS,
+	payload,
+});
+
+userInfo.deleteClientError = () => ({
+	type: ACTIONS.DELETE_CLIENT_REQUEST_ERROR,
 });
 
 export default userInfo;

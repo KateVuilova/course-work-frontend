@@ -1,14 +1,21 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Menu, Item, Separator, MenuProvider } from 'react-contexify';
 import 'react-contexify/dist/ReactContexify.min.css';
+import { userInfo } from '../../../redux/reducers';
+import ObjectForm from '../ObjectForm';
 import WorkerForm from '../WorkerForm';
-import DialogWithButtonGroup from '../DialogWithButtonGroup';
+import ClientForm from '../ClienForm';
+import DispatcherForm from '../DispatcherForm';
+import DriverForm from '../DriverForm';
+import ManagerForm from '../ManagerForm';
+import Dialog from '../../atoms/Dialog';
 
 import './styles.css';
 
-export default class ItemList extends Component {
+class ItemList extends Component {
   static propTypes = {
     className: PropTypes.string,
     emptyGroupsText: PropTypes.string,
@@ -27,6 +34,10 @@ export default class ItemList extends Component {
 
   onClick = ({ event, props }) => console.log(event, props);
 
+  onDeleteClick = () => {
+    this.props.deleteClient(this.state.clickedItem.id);
+  }
+
   onEditClick = () => {
     this.dialogRef.current.showModal();
   };
@@ -37,22 +48,39 @@ export default class ItemList extends Component {
         <Item onClick={this.onClick}>Create new inside</Item>
         <Item onClick={this.onEditClick}>Edit</Item>
         <Separator />
-        <Item onClick={this.onClick}>Delete</Item>
+        <Item onClick={this.onDeleteClick}>Delete</Item>
       </Menu>
     );
   }
 
+  renderForm() {
+    switch (this.state.clickedItem.type) {
+      case 'Worker':
+        return <WorkerForm mode='edit' />;
+      case 'Client':
+        return <ClientForm mode='edit' item={this.state.clickedItem} />;
+      case 'Dispatcher':
+        return <DispatcherForm mode='edit' />;
+      case 'Driver':
+        return <DriverForm mode='edit' />;
+      case 'Manager':
+        return <ManagerForm mode='edit' />;
+      default:
+        return <ObjectForm mode='edit' />;
+    }
+  }
+
   renderForms() {
     return (
-      <DialogWithButtonGroup
+      <Dialog
         ref={this.dialogRef}
         className='ItemList-dialog'
         actionButtonLabel={'Save'}
 			  cancelButtonLabel={'Cancel'}
       >
       <span>{this.state.clickedItem.type}</span>
-        <WorkerForm />
-      </DialogWithButtonGroup>
+        {this.renderForm()}
+      </Dialog>
     );
   }
 
@@ -87,7 +115,7 @@ export default class ItemList extends Component {
             onClick={() => this.handleLiClick(item)}
             onContextMenu={() => this.setState({ clickedItem: item })}
           >
-            {item.name}
+            <div>{item.name} <span>({item.type})</span></div>
           </li>
           {item.children && this.state.expandedItems.includes(item.id) && (
             <ul className={this.getInnerClassName(this.props.innerClassName)}>
@@ -112,3 +140,13 @@ export default class ItemList extends Component {
     );
   }
 }
+
+const mapStateToProps = ({ userInfo: { currentItem } }) => ({
+  currentItem,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  deleteClient: (id) => dispatch(userInfo.deleteClient(id)),
+});
+
+export default connect(null, mapDispatchToProps)(ItemList);

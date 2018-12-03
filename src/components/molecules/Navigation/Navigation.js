@@ -10,7 +10,7 @@ export default class Navigation extends Component {
 					<NavLink to='home'>Home</NavLink>
 				</li>
 				<li>
-					<NavLink to='profile'>Profile</NavLink>
+					<NavLink to='create'>Create new item</NavLink>
 				</li>
 				<li>
 					<NavLink to='logout'>Logout</NavLink>
