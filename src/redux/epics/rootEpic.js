@@ -6,6 +6,8 @@ import {
 	createClientEpic,
 	getClientEpic,
 	deleteClientEpic,
+	updateClientEpic,
+	getManagerEpic,
 } from './userInfo';
 
 export default combineEpics(
@@ -15,4 +17,6 @@ export default combineEpics(
 	createClientEpic,
 	getClientEpic,
 	deleteClientEpic,
+	updateClientEpic,
+	getManagerEpic,
 );

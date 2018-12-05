@@ -58,13 +58,13 @@ class ItemList extends Component {
       case 'Worker':
         return <WorkerForm mode='edit' />;
       case 'Client':
-        return <ClientForm mode='edit' item={this.state.clickedItem} />;
+        return <ClientForm mode='edit' item={this.state.clickedItem} onSubmit={() => this.dialogRef.current.close()} />;
       case 'Dispatcher':
         return <DispatcherForm mode='edit' />;
       case 'Driver':
         return <DriverForm mode='edit' />;
       case 'Manager':
-        return <ManagerForm mode='edit' />;
+        return <ManagerForm mode='edit' item={this.state.clickedItem} />;
       default:
         return <ObjectForm mode='edit' />;
     }

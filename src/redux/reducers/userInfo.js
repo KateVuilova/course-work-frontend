@@ -39,6 +39,11 @@ const userInfo = (state = {}, {
 				...state,
 				currentItem: payload,
 			}
+		case ACTIONS.GET_MANAGER_REQUEST_SUCCESS:
+		return {
+				...state,
+				currentItem: payload,
+			}
 		case ACTIONS.DELETE_CLIENT_REQUEST_SUCCESS:
 		return {
 			...state,
@@ -120,6 +125,34 @@ userInfo.deleteClientSuccess = (payload) => ({
 
 userInfo.deleteClientError = () => ({
 	type: ACTIONS.DELETE_CLIENT_REQUEST_ERROR,
+});
+
+userInfo.updateClient = (payload) => ({
+	type: ACTIONS.UPDATE_CLIENT_REQUEST,
+	payload,
+});
+
+userInfo.updateClientSuccess = (payload) => ({
+	type: ACTIONS.UPDATE_CLIENT_REQUEST_SUCCESS,
+	payload,
+});
+
+userInfo.updateClientError = () => ({
+	type: ACTIONS.UPDATE_CLIENT_REQUEST_ERROR,
+});
+
+userInfo.getManager = (payload) => ({
+	type: ACTIONS.GET_MANAGER_REQUEST,
+	payload,
+});
+
+userInfo.getManagerSuccess = (payload) => ({
+	type: ACTIONS.GET_MANAGER_REQUEST_SUCCESS,
+	payload,
+});
+
+userInfo.getManagerError = () => ({
+	type: ACTIONS.GET_MANAGER_REQUEST_ERROR,
 });
 
 export default userInfo;

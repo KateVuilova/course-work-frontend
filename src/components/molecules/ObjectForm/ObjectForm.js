@@ -13,7 +13,9 @@ export default class ObjectForm extends Component {
           placeholder='Name'
           type='text'
           name='name'
-          value={this.props.mode === 'edit' && this.props.item ? this.props.item.name : undefined}
+          value={this.props.mode === 'edit' ? this.props.name : undefined}
+          onChange={this.props.onNameChange}
+
         />
         {this.props.children}
         <div>

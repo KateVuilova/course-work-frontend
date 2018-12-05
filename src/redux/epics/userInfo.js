@@ -19,10 +19,10 @@ const getListFetch = (Authorization) => {
 };
 
 const createClienFetch = (Authorization, body) => httpApi.post(`${api}/client`, body);
-
 const getClientFetch = (Authorization, id) => httpApi.get(`${api}/client/${id}`, { Authorization });
-
 const deleteClientFetch = (Authorization, id) => httpApi.delete(`${api}/client/${id}`, { Authorization });
+const updateClientFetch = (Authorization, body) => httpApi.put(`${api}/client`, body, { Authorization });
+const getManagerFetch = (Authorization, id) => httpApi.get(`${api}/manager/${id}`, { Authorization });
 
 const getAccessTokenFromStore = (store) => {
 	const state = store.value;
@@ -128,12 +128,43 @@ export const deleteClientEpic = (action$, store) => {
 			if (!accessToken) return empty();
 			return deleteClientFetch(accessToken, payload);
 		}),
-		// switchMap((res) => fromPromise(res.json())),
 		switchMap((res) => {
 			if (res.error) {
 				return of(userInfo.deleteClientError());
 			}
 			return of(userInfo.deleteClientSuccess(res));
+		}),
+
+	);
+};
+
+export const updateClientEpic = (action$, store) => {
+	return action$.ofType(ACTIONS.UPDATE_CLIENT_REQUEST).pipe(
+		switchMap(({ payload }) => {
+			const body = { ...payload, type: 'Client' }
+			const accessToken = getAccessTokenFromStore(store);
+			return updateClientFetch(accessToken, body);
+		}),
+		switchMap((res) => {
+			if (res.error) return of(userInfo.updateClientError());
+			return of(userInfo.updateClientSuccess(res));
+		})
+	);
+};
+
+export const getManagerEpic = (action$, store) => {
+	return action$.ofType(ACTIONS.GET_MANAGER_REQUEST).pipe(
+		switchMap(({ payload }) => {
+			const accessToken = getAccessTokenFromStore(store);
+			if (!accessToken) return empty();
+			return getManagerFetch(accessToken, payload);
+		}),
+		switchMap((res) => fromPromise(res.json())),
+		switchMap((res) => {
+			if (res.error) {
+				return of(userInfo.getManagerError());
+			}
+			return of(userInfo.getManagerSuccess(res));
 		}),
 
 	);

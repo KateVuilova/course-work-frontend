@@ -66,6 +66,13 @@ class App extends Component {
                 </Fragment>
               )}
             />
+            <Route>
+              {this.props.signedIn ? (
+                <Redirect to='/home' />
+              ) : (
+                <Redirect to='signin' />
+              )}
+            </Route>
           </Switch>
         </div>
       </BrowserRouter>
